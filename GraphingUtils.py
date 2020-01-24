@@ -2,6 +2,15 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
+def plot_points(data_test):
+    plt.scatter(
+        np.stack(data_test[:, 0])[:, 0],
+        np.stack(data_test[:, 0])[:, 1],
+        c=data_test[:, 1].astype(int)
+    )
+    plt.show()
+
+
 def plot_points_and_separators(data_test, clfs):
     plt.scatter(
         np.stack(data_test[:, 0])[:, 0],
