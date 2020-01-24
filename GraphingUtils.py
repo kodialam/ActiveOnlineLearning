@@ -31,3 +31,12 @@ def plot_points_and_separators(data_test, clfs):
         contour_handles.append(contour.legend_elements()[0][0])
     ax.legend(contour_handles, list(clfs.keys()))
     plt.show()
+
+def plot_sampling_prob(decision_func):
+    param_range = np.linspace(0, 10, 10)
+    x = plt.xrange(-20, 20, 100)
+    plt.figure()
+    for param in param_range:
+        def df_loc(x):
+            return decision_func()
+        plt.plot(x, np.vectorize(dec))
